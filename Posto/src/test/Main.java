@@ -10,10 +10,14 @@ public class Main {
 
         String filePath = "";
 
-
-        while (filePath.isEmpty()){
-            filePath = GUI.procuraCaminho();
+        try{
+            while (filePath.isEmpty()){
+                filePath = GUI.procuraCaminho();
+            }
+        }catch (RotaInvalida e){
+            e.getMessage();
         }
+
 
         System.out.println(filePath);
 

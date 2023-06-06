@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LeitorCSV {
+public class LeitorCSV{
     private String caminho;
     private final String delimitador = ";";
 
