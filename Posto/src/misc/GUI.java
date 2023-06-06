@@ -13,13 +13,14 @@ public class GUI {
 
         int selecao = fc.showOpenDialog(null);
 
-        if (selecao == JFileChooser.APPROVE_OPTION){
-            return fc.getSelectedFile().getAbsolutePath();
-        }else if(selecao == JFileChooser.CANCEL_OPTION) {
-            System.err.println("Acao cancelada pelo usuário !");
-            return " ";
-        }else{
-            throw new RotaInvalida("Não foi possível determinar a rota do arquivo !");
+        switch (selecao){
+            case JFileChooser.APPROVE_OPTION:
+                return fc.getSelectedFile().getAbsolutePath();
+            case JFileChooser.CANCEL_OPTION:
+                System.err.println("Acao cancelada pelo usuário !");
+                return "";
+            default:
+                throw new RotaInvalida("Não foi possível determinar a rota do arquivo !");
         }
     }
 }

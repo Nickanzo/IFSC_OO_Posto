@@ -11,7 +11,7 @@ public class Main {
         String filePath = "";
 
         try{
-            while (filePath.isEmpty()){
+            while (filePath.isBlank()){
                 filePath = GUI.procuraCaminho();
             }
         }catch (RotaInvalida e){
