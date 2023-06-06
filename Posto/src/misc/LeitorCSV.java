@@ -9,11 +9,10 @@ import java.util.List;
 
 public class LeitorCSV {
     private String caminho;
-    private String delimitador;
+    private final String delimitador = ";";
 
-    public LeitorCSV(String filePath, String delimiter) {
+    public LeitorCSV(String filePath) {
         this.caminho = filePath;
-        this.delimitador = delimiter;
     }
 
     public List<String[]> readCSV() {
@@ -30,22 +29,6 @@ public class LeitorCSV {
         }
 
         return data;
-    }
-
-    public String procuraCaminho(){
-
-        JFileChooser fc = new JFileChooser();
-
-        fc.setDialogTitle("Seleccione arquivo CSV");
-        fc.setFileFilter(new FileNameExtensionFilter("Arquivos CSV (*.csv)", "csv"));
-
-        int arquivoSelecionado = fc.showOpenDialog(null);
-
-        if (arquivoSelecionado == JFileChooser.APPROVE_OPTION){
-            return fc.getSelectedFile().getAbsolutePath();
-        }else {
-            return null;
-        }
     }
 }
 
