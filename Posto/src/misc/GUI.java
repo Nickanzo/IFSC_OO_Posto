@@ -2,6 +2,7 @@ package misc;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
 
 public class GUI {
     public static String procuraCaminho() throws RotaInvalida{
@@ -10,6 +11,7 @@ public class GUI {
 
         fc.setDialogTitle("Seleccione arquivo CSV");
         fc.setFileFilter(new FileNameExtensionFilter("Arquivos CSV (*.csv)", "csv"));
+        fc.setCurrentDirectory(new File(System.getProperty("user.dir")));
 
         int selecao = fc.showOpenDialog(null);
 
